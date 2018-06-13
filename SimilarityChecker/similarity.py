@@ -74,7 +74,7 @@ def clustering(filename, plotfile):
 def getAllOutliers():
     outliers = []
     for i in range(0,10):
-        outliers.append(np.load('outliers/'+str(i)+'.npy'))
+        outliers.append(np.load('../outliers/'+str(i)+'.npy'))
         
     flat_list = [item for sublist in outliers for item in sublist]
     return flat_list
