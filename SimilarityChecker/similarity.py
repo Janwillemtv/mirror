@@ -11,6 +11,7 @@ import math
 import igraph
 import numpy as np
 import sys
+
 sys.path.append("..\OutlierDetector")
 import mnist_helpers as mh
 
@@ -31,7 +32,9 @@ def getNumbers(input_set, nr):
             alltwos.append(input_set[0][i])
     return alltwos
 
-def getResults(input_set, outputfile):
+def getResults(input_set, counter):
+    filename = 'sim_scores/sim_'+str(counter)+'.txt'
+    
     def square_rooted(x):
         return round(math.sqrt(sum([a*a for a in x])),3)
      
@@ -43,20 +46,21 @@ def getResults(input_set, outputfile):
     results = {}
        
     for i in range(0,len(input_set)):
-        mapped[i] = input_set[i]
+        mapped[(counter,i)] = input_set[i]
         for j in range(0,len(input_set)):
             if i is not j and (i,j) not in results and (j,i) not in results:
                 results[(i,j)] = cosine_similarity(input_set[i], input_set[j])
 
-    with open(outputfile, 'w+') as f:
+    with open(filename, 'w+') as f:
         for key, value in results.items():
             if value > 0.7:
                 f.write(str(key[0])+'\t'+str(key[1])+'\t'+str(value)+'\n')
 
 
-def clustering(filename, plotfile):
+def clustering(filename, counter):
 
     G = igraph.read(filename,directed=False,format='ncol')
+    
     D = G.community_multilevel()
     
     MIN_CLUSTER_SIZE = 1
@@ -73,34 +77,54 @@ def clustering(filename, plotfile):
             
             style["layout"] = i.layout("fr", maxiter=250) # "fr" or "lgl" work nicely
     
-            igraph.plot(i, 'cluster_'+str(kept_clusters)+'.pdf', **style)
+            igraph.plot(i, 'cluster_visualization/cluster_'+str(kept_clusters)+'_'+str(counter)+'.pdf', **style)
             
     print('total clusters -->',len(D.subgraphs()))
     print('kept clusters -->',kept_clusters)
     return clusters
 
 
-def getAllOutliers():
+def getAllOutliers():    
     outliers = []
     for i in range(0,10):
-        outliers.append(np.load('../outliers/'+str(i)+'.npy'))
+        outliers.append(np.load('../OutlierDetector/outliers/'+str(i)+'.npy'))
         
-    flat_list = [item for sublist in outliers for item in sublist]
-    return flat_list
+    return outliers
 
+    
+def printImgCluster(c, counter):
+    nrs = []
+    for u in c.vs:
+        nrs.append(int(u['name']))
+        
+    images = np.array([mapped[(counter,x)] for x in nrs]) 
+        
+    mh.show_some_digits(images,np.array([x for x in nrs]))
 
 outliers = getAllOutliers()
 
-getResults(outliers, 'sim_x.txt')
+clusters = []    
 
-clusters = clustering('sim_x.txt','plot_x.pdf')
-
-#%%
-#for c in clusters:
-c = clusters[0]
-
-nrs = []
-for u in c.vs:
-    nrs.append(int(u['name']))
+counter = 0
+for o in outliers:
+    filename = 'sim_scores/sim_'+str(counter)+'.txt'
+        
+    getResults(o, counter)
+    clus = clustering(filename, counter)
+    clusters.append((counter,clus))
     
-mh.show_some_digits(np.array([mapped[x] for x in nrs]),np.array([x for x in nrs]))
+    print('--> digits for clusters of ', counter)
+
+    for j in range(0,len(clus)):
+        printImgCluster(clus[j],counter)
+
+    counter += 1
+
+#for i in range(0,len(clusters)):
+#    clus_1 = clusters[i][1]
+#    
+#    print('--> digits for clusters of ', i)
+#    
+#    for j in range(0,len(clus_1)):
+#        printImgCluster(clus_1[j],i)
+#    
