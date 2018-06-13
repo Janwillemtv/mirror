@@ -15,7 +15,6 @@ import sys
 sys.path.append("..\OutlierDetector")
 import mnist_helpers as mh
 
-mapped = {}
 
 def getSets():
     # Load the dataset
@@ -101,9 +100,11 @@ def printImgCluster(c, counter):
         
     mh.show_some_digits(images,np.array([x for x in nrs]))
 
-outliers = getAllOutliers()
 
+mapped = {}
 clusters = []    
+
+outliers = getAllOutliers()
 
 counter = 0
 for o in outliers:
@@ -119,12 +120,3 @@ for o in outliers:
         printImgCluster(clus[j],counter)
 
     counter += 1
-
-#for i in range(0,len(clusters)):
-#    clus_1 = clusters[i][1]
-#    
-#    print('--> digits for clusters of ', i)
-#    
-#    for j in range(0,len(clus_1)):
-#        printImgCluster(clus_1[j],i)
-#    
