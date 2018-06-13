@@ -1,7 +1,5 @@
 print(__doc__)
-# Author: Krzysztof Sopyla <krzysztofsopyla@gmail.com>
-# https://ksopyla.com
-# License: MIT
+
 
 # Standard scientific Python imports
 import matplotlib.pyplot as plt
@@ -32,7 +30,7 @@ targets = mnist.target
 # We have to reshape each data row, from flat array of 784 int to 28x28 2D array
 
 # pick  random indexes from 0 to size of our dataset
-show_some_digits(images, targets)
+#show_some_digits(images, targets)
 
 # ---------------- classification begins -----------------
 # scale data for [0,255] -> [0,1]
@@ -68,6 +66,7 @@ X_train, X_test, y_train, y_test = train_test_split(X_data, Y, test_size=0.15, r
 filename = "finalized_model.sav"
 if os.path.isfile(filename):
     classifier = pickle.load(open(filename, 'rb'))
+    print("Loaded model")
 else:
     ################ Classifier with good params ###########
     #Create a classifier: a support vector classifier
@@ -89,9 +88,22 @@ else:
 
 
 for digitToPredict in range(10):
-    
-
-
-
+    print("Predicting", digitToPredict)
+    tempOutliers = []
+    tempLabels = []
+    X_test = digitData[digitToPredict]
 
     predicted = classifier.predict(X_test)
+    for idx, outcome in enumerate(predicted):
+        if outcome != digitToPredict: #outlier
+            tempOutliers.append(X_test[idx])
+            tempLabels.append(predicted[idx])
+    print("Nr of outliers", len(tempOutliers))
+    outliers = np.array(tempOutliers)
+    labels = np.array(tempLabels)
+
+    print("Writing files")
+    outliername = "/outliers/" + str(digitToPredict)
+    np.save(os.path.abspath(outliername),outliers)
+    labelname = "/outliers/" + str(digitToPredict) + "_labels"
+    np.save(os.path.abspath(outliername),labels)
