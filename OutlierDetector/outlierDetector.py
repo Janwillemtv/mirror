@@ -80,13 +80,16 @@ def load_model(model):
     return classifier
 
 
-def predict(classifier, digitToPredict):
+def predict_outlier(classifier,inputDigit, digitToPredict):
 
     print("Predicting", digitToPredict)
-    X_test = digitData[digitToPredict]
 
-    predicted = classifier.predict(X_test)
-    return predicted
+    predicted = classifier.predict(inputDigit)
+    if predicted == digitToPredict:
+        output = True
+    else:
+        output = False
+    return output
 
 
 def predict_and_save(classifier):
