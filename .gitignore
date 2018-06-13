@@ -4,6 +4,7 @@
 .idea/
 
 mldata/
+finalized_model.sav
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
