@@ -103,7 +103,7 @@ for digitToPredict in range(10):
     labels = np.array(tempLabels)
 
     print("Writing files")
-    outliername = "/outliers/" + str(digitToPredict)
-    np.save(os.path.abspath(outliername),outliers)
-    labelname = "/outliers/" + str(digitToPredict) + "_labels"
-    np.save(os.path.abspath(outliername),labels)
+
+    np.save(os.path.join('outliers', str(digitToPredict)),outliers)
+    labelname = str(digitToPredict) + "_labels"
+    np.save(os.path.join('outliers', labelname),labels)
