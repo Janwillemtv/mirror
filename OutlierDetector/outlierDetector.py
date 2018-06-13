@@ -54,23 +54,6 @@ for digit in range(10):
             tempArray.append(X_test[idx])
     digitData[digit] = tempArray
 
-############SELECT MODEL TO USE HERE##########
-## finalized_model.sav    this works best (doesnt create so much outliers)
-## finalized_model_bad    this creates more outliers (worse model)
-model = "finalized_model_bad.sav"
-
-classifier = load_model(model)
-predict_and_save(classifier)
-
-
-
-
-
-
-
-
-
-
 def load_model(model):
     filepath = os.path.join("models", model)
     if os.path.isfile(filepath):
@@ -92,9 +75,9 @@ def load_model(model):
         print('Stop learning {}'.format(str(end_time)))
         elapsed_time= end_time - start_time
         print('Elapsed learning {}'.format(str(elapsed_time)))
-        filename = 'finalized_model.sav'
+
         pickle.dump(classifier, open(os.path.join("models",model), 'wb'))
-        return classifier
+    return classifier
 
 
 def predict(classifier, digitToPredict):
@@ -132,3 +115,23 @@ def predict_and_save(classifier):
         labelname = str(digitToPredict) + "_labels"
         np.save(os.path.join('outliers', labelname),labels)
         np.save(os.path.join('goodDigits',str(digitToPredict)),goodDigits)
+
+
+
+############SELECT MODEL TO USE HERE##########
+## finalized_model.sav    this works best (doesnt create so much outliers)
+## finalized_model_bad    this creates more outliers (worse model)
+model = "finalized_model_bad.sav"
+
+classifier = load_model(model)
+predict_and_save(classifier)
+
+
+
+
+
+
+
+
+
+
