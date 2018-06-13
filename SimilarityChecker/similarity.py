@@ -10,6 +10,11 @@ import pickle, gzip
 import math 
 import igraph
 import numpy as np
+import sys
+sys.path.append("..\OutlierDetector")
+import mnist_helpers as mh
+
+mapped = {}
 
 def getSets():
     # Load the dataset
@@ -17,6 +22,7 @@ def getSets():
         train_set, valid_set, test_set  = pickle.load(f, encoding='latin1')
     f.close()
     return train_set, valid_set, test_set
+
 
 def getNumbers(input_set, nr):
     alltwos = []
@@ -37,6 +43,7 @@ def getResults(input_set, outputfile):
     results = {}
        
     for i in range(0,len(input_set)):
+        mapped[i] = input_set[i]
         for j in range(0,len(input_set)):
             if i is not j and (i,j) not in results and (j,i) not in results:
                 results[(i,j)] = cosine_similarity(input_set[i], input_set[j])
@@ -45,6 +52,7 @@ def getResults(input_set, outputfile):
         for key, value in results.items():
             if value > 0.7:
                 f.write(str(key[0])+'\t'+str(key[1])+'\t'+str(value)+'\n')
+
 
 def clustering(filename, plotfile):
 
@@ -71,6 +79,7 @@ def clustering(filename, plotfile):
     print('kept clusters -->',kept_clusters)
     return clusters
 
+
 def getAllOutliers():
     outliers = []
     for i in range(0,10):
@@ -79,9 +88,19 @@ def getAllOutliers():
     flat_list = [item for sublist in outliers for item in sublist]
     return flat_list
 
+
 outliers = getAllOutliers()
 
 getResults(outliers, 'sim_x.txt')
 
 clusters = clustering('sim_x.txt','plot_x.pdf')
 
+#%%
+#for c in clusters:
+c = clusters[0]
+
+nrs = []
+for u in c.vs:
+    nrs.append(int(u['name']))
+    
+mh.show_some_digits(np.array([mapped[x] for x in nrs]),np.array([x for x in nrs]))
