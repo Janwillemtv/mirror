@@ -80,15 +80,16 @@ def load_model(model):
     return classifier
 
 
-def predict_outlier(classifier,inputDigit, digitToPredict):
-
+def predict_outlier(classifier,inputDigit, digitToPredict):#Returns true if outlier is detected (if predicted does not match required)
+    #loaded classifier, image array, expected digit
     print("Predicting", digitToPredict)
-
-    predicted = classifier.predict(inputDigit)
+    input = []
+    input.append(inputDigit)
+    predicted = classifier.predict(input)
     if predicted == digitToPredict:
-        output = True
-    else:
         output = False
+    else:
+        output = True
     return output
 
 
@@ -125,9 +126,14 @@ def predict_and_save(classifier):
 ## finalized_model.sav    this works best (doesnt create so much outliers)
 ## finalized_model_bad    this creates more outliers (worse model)
 model = "finalized_model_bad.sav"
+#predict_and_save(classifier)
 
+
+####EXAMPLE USED OF THE PREDICT OUTLIER#######
 classifier = load_model(model)
-predict_and_save(classifier)
+print(predict_outlier(classifier,X_data[203],0))
+print(targets[203])
+
 
 
 
