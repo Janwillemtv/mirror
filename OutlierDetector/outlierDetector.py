@@ -16,10 +16,8 @@ from sklearn import datasets, svm, metrics
 from sklearn.datasets import fetch_mldata
 
 # import custom module
-from mnist_helpers import *
+from OutlierDetector.mnist_helpers import *
 from sklearn.model_selection import train_test_split
-
-
 
 #load data
 mnist = fetch_mldata('MNIST original', data_home='./')
@@ -57,11 +55,11 @@ for digit in range(10):
 def load_model(model):
     filepath = os.path.join("models", model)
     if os.path.isfile(filepath):
-        classifier = pickle.load(open(filepath, 'rb'))
+        classifier = pickle.load(open(filepath, 'rb'), encoding='latin1')
         print("Loaded model")
     else:
         ################ Classifier with good params ###########
-        #Create a classifier: a support vector classifier
+        # Create a classifier: a support vector classifier
         print("Model not found, training new one")
         param_C = 5
         param_gamma = 0.05
@@ -80,13 +78,13 @@ def load_model(model):
     return classifier
 
 
-def predict_outlier(classifier,inputDigit, digitToPredict):#Returns true if outlier is detected (if predicted does not match required)
+def predict_outlier(classifier, inputDigit, expectedDigit): #Returns true if outlier is detected (if predicted does not match required)
     #loaded classifier, image array, expected digit
-    print("Predicting", digitToPredict)
     input = []
     input.append(inputDigit)
     predicted = classifier.predict(input)
-    if predicted == digitToPredict:
+    print("Expected ", expectedDigit, ". Predicted ", predicted[0])
+    if predicted[0] == expectedDigit:
         output = False
     else:
         output = True
@@ -126,21 +124,18 @@ def predict_and_save(classifier):
 ## finalized_model.sav    this works best (doesnt create so much outliers)
 ## finalized_model_bad    this creates more outliers (worse model)
 model = "finalized_model_bad.sav"
-#predict_and_save(classifier)
-
-
-####EXAMPLE USED OF THE PREDICT OUTLIER#######
 classifier = load_model(model)
-print(predict_outlier(classifier,X_data[203],0))
-print(targets[203])
 
+#predict_and_save(classifier)
+#
+# classifier = load_model(model)
+# for i in range(50000, 60000):
+#     print(predict_outlier(classifier, X_data[i], targets[i]))
 
-
-
-
-
-
-
-
-
-
+goodimgs = np.load('/Users/margot.rutgers/mirror/mirror/OutlierDetector/goodDigits/0.npy')
+outliers = np.load('/Users/margot.rutgers/mirror/mirror/outliers/0.npy')
+labels = np.load('/Users/margot.rutgers/mirror/mirror/outliers/0_labels.npy')
+# for i, img in enumerate(imgs):
+#     print(i)
+#     if predict_outlier(classifier, img, 0.0) == True:
+#         print("Outlier!")

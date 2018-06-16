@@ -12,7 +12,7 @@ import igraph
 import numpy as np
 import sys
 
-sys.path.append("..\OutlierDetector")
+sys.path.append("../OutlierDetector")
 import mnist_helpers as mh
 
 
