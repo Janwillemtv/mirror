@@ -1,23 +1,26 @@
 
 h1 {
-    font-family: 'Dosis', sans-serif;
-    font-weight: 400;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
     line-height: 46px;
-    font-size: 40px;
+    font-size: 43px;
     margin: 0 0 23px 0;
 }
 
 h2 {
-    font-family: 'Dosis', sans-serif;
-    font-weight: 800;
-    font-size: 18px;
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
     line-height: 23px;
-    margin: 0 0 23px 0;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0 0 5px 0;
 }
 
 p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+    font-family: 'Cantarell', sans-serif;
+    font-size: 17px;
     line-height: 23px;
     margin: 0 0 23px 0;
 }
@@ -59,9 +62,11 @@ body {
 }
 
 #main-container {
+    overflow: hidden;
+
     background: white;
     width: 100%;
-    height: 900px;
+    height: calc(100vh - 90px);
 
     display: flex; /* or inline-flex */
     flex-direction: row;
@@ -84,7 +89,8 @@ body {
 }
 
 #footer {
+    overflow: hidden;
     width: 100%;
-    height: 200px;
+    height: calc(100% - 720px);
     background: whitesmoke;
 }

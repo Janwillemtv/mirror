@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='machine_status.css') }}">
+<div class="title">
+    <h2> Machine status </h2>
+</div>
+<div id="machine-status-dashboard">
+    {% for machine in machinepassports %}
+        <div class="status-indicator" id="indicator-{{ machine["ID"] }}">
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    $(".status-indicator").hover(function () {
+        console.log(this.id)
+    });
+</script>

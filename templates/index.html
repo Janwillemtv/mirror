@@ -3,7 +3,13 @@
 <head>
     <title>Digital Twin Dashboard</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Fjalla:400,800" rel="stylesheet" type="text/css"/>
+    {#    <script src="{{ url_for('static', filename='jquery.js') }}" type="text/javascript"></script>#}
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{
+      url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
+
 
 </head>
 <body>
@@ -12,36 +18,35 @@
 </div>
 <div id="main-container">
     <div class="dash-column" id="left-column">
-        <h1> Settings & Tools </h1>
+        <h2> Settings & Tools </h2>
     </div>
 
     <div class="dash-column" id="middle-column">
-        <h1> General overview </h1>
+        <h2> General overview </h2>
         <div class="widget" id="status">
-            <h2> Problem status </h2>
+            <h3> Problem status </h3>
         </div>
         <div class="widget" id="clusters">
-            <h2> Cluster view</h2>
+            <h3> Cluster view</h3>
         </div>
     </div>
 
     <div class="dash-column" id="right-column">
-        <h1> Machine specs </h1>
+        <h2> Machine specs </h2>
         <div class="widget" id="timeline">
-            <h2> Timeline </h2>
+            <h3> Timeline </h3>
         </div>
         <div class="widget" id="attribute-view">
-            <h2> Attribute view </h2>
+            <h3> Attribute view </h3>
         </div>
 
         <div class="widget" id="passport">
-            <h2> Passport </h2>
+            <h3> Passport </h3>
         </div>
 
     </div>
     <div class="dash-column" id="footer">
-        <h1> Machine status </h1>
-
+        {% include 'machine_status.html' %}
     </div>
 </div>
 </body>

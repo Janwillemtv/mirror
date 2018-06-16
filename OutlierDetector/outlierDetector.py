@@ -126,15 +126,6 @@ def predict_and_save(classifier):
 model = "finalized_model_bad.sav"
 classifier = load_model(model)
 
-#predict_and_save(classifier)
-#
-# classifier = load_model(model)
-# for i in range(50000, 60000):
-#     print(predict_outlier(classifier, X_data[i], targets[i]))
-
-goodimgs = np.load('/Users/margot.rutgers/mirror/mirror/OutlierDetector/goodDigits/0.npy')
-outliers = np.load('/Users/margot.rutgers/mirror/mirror/outliers/0.npy')
-labels = np.load('/Users/margot.rutgers/mirror/mirror/outliers/0_labels.npy')
 # for i, img in enumerate(imgs):
 #     print(i)
 #     if predict_outlier(classifier, img, 0.0) == True:
