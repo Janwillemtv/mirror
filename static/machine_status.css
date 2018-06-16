@@ -12,5 +12,7 @@
     margin: 10px;
     border-radius: 2px;
     background: limegreen;
-
+    text-align: center;
+    font-family: 'Cantarell', sans-serif;
+    color: white;
 }

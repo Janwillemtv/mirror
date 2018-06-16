@@ -4,13 +4,26 @@
 </div>
 <div id="machine-status-dashboard">
     {% for machine in machinepassports %}
-        <div class="status-indicator" id="indicator-{{ machine["ID"] }}">
+        <div class="status-indicator" id="indicator-{{ machine["ID"] }}" data-passport='{{ machine | tojson }}'>
+            {% id = machine["ID"] %}
         </div>
     {% endfor %}
 </div>
 
 <script>
-    $(".status-indicator").hover(function () {
-        console.log(this.id)
+    $(".status-indicator").on('click', function () {
+        var json = $(this).data('passport');
+        console.log(json)
+        $("#passport-view").html(
+            "ID: " + json["ID"] + '<br>' +
+            "Type: " + json["Type"] + '<br>' +
+            "Hardware version: " + json["Hardware version"] + '<br>' +
+            "Software version: " + json["Software version"] + '<br>' +
+            "Manufacturer: " + json["Manufacturer"] + '<br>' +
+            "Company: " + json["Company"] + '<br>' +
+            "Location: " + json["Location"] + '<br>' +
+            "date manufactured: " + json["date manufactured"] + '<br>' +
+            "date bought: " + json["date bought"] + '<br>'
+        );
     });
 </script>
