@@ -1,5 +1,5 @@
 #status {
-    height: 50%;
+    height: 25%;
     width: 100%;
     display: flex; /* or inline-flex */
     flex-direction: column;
@@ -7,8 +7,9 @@
 }
 
 #problem-status-dashboard {
-    height: 80%;
+    height: auto;
     overflow: scroll;
+    padding: 10px;
 }
 
 .problem-indictor {
