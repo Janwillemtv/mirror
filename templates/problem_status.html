@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='problem_status.css') }}">
+
+<h3>Problem status</h3>
+<div id="problem-status-dashboard">
+    <table id="problem-status-table">
+        {% set keys = ['Type', 'Hardware version', 'Software version', 'Manufacturer', 'Company', 'Location'] %}
+        {% for key in keys %}
+            <tr>
+                <td> {{ key }}</td>
+                {% for machine in machinepassports %}
+                    <td>
+                        <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"></div>
+                        {% if outliers[machine["ID"]] %}
+                            <script>
+                                $('#problem-{{ key }}{{ machine["ID"] }}').css('background-color', 'red');
+                            </script>
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</div>

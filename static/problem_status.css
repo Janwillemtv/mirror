@@ -1,0 +1,20 @@
+#status {
+    height: 50%;
+    width: 100%;
+    display: flex; /* or inline-flex */
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#problem-status-dashboard {
+    height: 80%;
+    overflow: scroll;
+}
+
+.problem-indictor {
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: #000;
+    margin: 1px;
+}

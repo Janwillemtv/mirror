@@ -24,7 +24,7 @@
     <div class="dash-column" id="middle-column">
         <h2> General overview </h2>
         <div class="widget" id="status">
-            <h3> Problem status </h3>
+            {% include 'problem_status.html' %}
         </div>
         <div class="widget" id="clusters">
             <h3> Cluster view</h3>
@@ -34,7 +34,7 @@
     <div class="dash-column" id="right-column">
         <h2> Machine specs </h2>
         <div class="widget" id="timeline">
-            <h3> Timeline </h3>
+            {% include 'timeline.html' %}
         </div>
         <div class="widget" id="attribute-view">
             <h3> Attribute view </h3>

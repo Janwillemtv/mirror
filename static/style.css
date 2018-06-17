@@ -81,6 +81,8 @@ body {
 #middle-column {
     height: 700px;
     flex-grow: 2;
+    display: flex; /* or inline-flex */
+    flex-direction: column;
 }
 
 #right-column {
