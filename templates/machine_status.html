@@ -5,7 +5,12 @@
 <div id="machine-status-dashboard">
     {% for machine in machinepassports %}
         <div class="status-indicator" id="indicator-{{ machine["ID"] }}" data-passport='{{ machine | tojson }}'>
-            {% id = machine["ID"] %}
+            {% if outliers[machine["ID"]] %}
+                <script>
+                    $('#indicator-{{ machine["ID"] }}').css('background-color', 'red');
+                </script>
+            {% endif %}
+            {{ machine["ID"] }}
         </div>
     {% endfor %}
 </div>
