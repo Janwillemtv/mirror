@@ -76,7 +76,7 @@ def clustering(filename, counter):
             
             style["layout"] = i.layout("fr", maxiter=250) # "fr" or "lgl" work nicely
     
-            igraph.plot(i, 'cluster_visualization/cluster_'+str(kept_clusters)+'_'+str(counter)+'.pdf', **style)
+            igraph.plot(i, 'cluster_visualization/cluster_'+str(counter)+'_'+str(kept_clusters)+'.pdf', **style)
             
     print('total clusters -->',len(D.subgraphs()))
     print('kept clusters -->',kept_clusters)
