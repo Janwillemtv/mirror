@@ -91,14 +91,18 @@ def getAllOutliers():
     return outliers
 
     
-def printImgCluster(c, counter):
+def printImgCluster(c, j, counter):
     nrs = []
     for u in c.vs:
         nrs.append(int(u['name']))
+    
+    nameC = 'cluster_machines/line_'+str(counter)+'_cluster_'+str(j)+'.pickle'
         
-    images = np.array([mapped[(counter,x)] for x in nrs]) 
-        
-    mh.show_some_digits(images,np.array([x for x in nrs]))
+    with open(nameC,'wb+') as f3:
+        pickle.dump(nrs, f3)
+
+#    images = np.array([mapped[(counter,x)] for x in nrs]) 
+#    mh.show_some_digits(images,np.array([x for x in nrs]))
 
 
 mapped = {}
@@ -117,6 +121,6 @@ for o in outliers:
     print('--> digits for clusters of ', counter)
 
     for j in range(0,len(clus)):
-        printImgCluster(clus[j],counter)
+        printImgCluster(clus[j],j,counter)
 
     counter += 1
