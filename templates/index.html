@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Twin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="header">
+    <h1> MIRROR</h1>
+</div>
+<div id="main-container">
+    <div class="dash-column" id="left-column">
+        <h1> Settings & Tools </h1>
+    </div>
+
+    <div class="dash-column" id="middle-column">
+        <h1> General overview </h1>
+        <div class="widget" id="status">
+            <h2> Problem status </h2>
+        </div>
+        <div class="widget" id="clusters">
+            <h2> Cluster view</h2>
+        </div>
+    </div>
+
+    <div class="dash-column" id="right-column">
+        <h1> Machine specs </h1>
+        <div class="widget" id="timeline">
+            <h2> Timeline </h2>
+        </div>
+        <div class="widget" id="attribute-view">
+            <h2> Attribute view </h2>
+        </div>
+
+        <div class="widget" id="passport">
+            <h2> Passport </h2>
+        </div>
+
+    </div>
+    <div class="dash-column" id="footer">
+        <h1> Machine status </h1>
+    </div>
+</div>
+</body>
+</html>
