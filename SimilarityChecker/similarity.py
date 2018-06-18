@@ -12,7 +12,7 @@ import igraph
 import numpy as np
 import sys
 
-sys.path.append("../OutlierDetector")
+sys.path.append("..\OutlierDetector")
 import mnist_helpers as mh
 
 
@@ -76,7 +76,7 @@ def clustering(filename, counter):
             
             style["layout"] = i.layout("fr", maxiter=250) # "fr" or "lgl" work nicely
     
-            igraph.plot(i, 'cluster_visualization/cluster_'+str(kept_clusters)+'_'+str(counter)+'.pdf', **style)
+            igraph.plot(i, 'cluster_visualization/cluster_'+str(counter)+'_'+str(kept_clusters)+'.pdf', **style)
             
     print('total clusters -->',len(D.subgraphs()))
     print('kept clusters -->',kept_clusters)
@@ -91,14 +91,18 @@ def getAllOutliers():
     return outliers
 
     
-def printImgCluster(c, counter):
+def printImgCluster(c, j, counter):
     nrs = []
-    for u in c.vs: # voor elke machine
-        nrs.append(int(u['name'])) # machine id
+    for u in c.vs:
+        nrs.append(int(u['name']))
+    
+    nameC = 'cluster_machines/line_'+str(counter)+'_cluster_'+str(j)+'.pickle'
         
-    images = np.array([mapped[(counter,x)] for x in nrs]) 
-        
-    mh.show_some_digits(images,np.array([x for x in nrs]))
+    with open(nameC,'wb+') as f3:
+        pickle.dump(nrs, f3)
+
+#    images = np.array([mapped[(counter,x)] for x in nrs]) 
+#    mh.show_some_digits(images,np.array([x for x in nrs]))
 
 
 mapped = {}
@@ -117,6 +121,6 @@ for o in outliers:
     print('--> digits for clusters of ', counter)
 
     for j in range(0,len(clus)):
-        printImgCluster(clus[j],counter)
+        printImgCluster(clus[j],j,counter)
 
     counter += 1
