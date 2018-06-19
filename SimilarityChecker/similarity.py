@@ -93,8 +93,8 @@ def getAllOutliers():
     
 def printImgCluster(c, counter):
     nrs = []
-    for u in c.vs:
-        nrs.append(int(u['name']))
+    for u in c.vs: # voor elke machine
+        nrs.append(int(u['name'])) # machine id
         
     images = np.array([mapped[(counter,x)] for x in nrs]) 
         

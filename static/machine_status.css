@@ -4,6 +4,24 @@
     display: flex; /* or inline-flex */
     flex-direction: row;
     flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.machinelijn {
+    background: white;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 4px;
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 50px;
+    width: 300px;
+}
+
+.machinelijn.clicked {
+    background: #eef1f4;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .status-indicator {

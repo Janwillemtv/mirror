@@ -131,6 +131,7 @@ def detect_outliers():
         # path_to_sequence = os.path.join(os.pardir, 'scenario', 'sequences', str(i)) + '.npz';
         path_to_sequence = '/Users/margot.rutgers/mirror/mirror/scenario/sequences/' + str(i) +'.npz';
         data = np.load(path_to_sequence);
+        print(data[data.keys()[0]][0]);
 
         target_value = float(int(i / 5));  # There are 5 sequences per digit
         image = data[data.keys()[0]][0];

@@ -1,5 +1,5 @@
 #status {
-    height: 25%;
+    height: auto;
     width: 100%;
     display: flex; /* or inline-flex */
     flex-direction: column;
@@ -13,9 +13,9 @@
 }
 
 .problem-indictor {
-    width: 4px;
-    height: 4px;
-    border-radius: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
     background: #000;
     margin: 1px;
 }

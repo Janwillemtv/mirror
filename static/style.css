@@ -28,7 +28,6 @@ h3 {
     color: darkblue;
 }
 
-
 p {
     font-family: 'Cantarell', sans-serif;
     font-size: 17px;
@@ -69,7 +68,6 @@ body {
 
 .widget {
     flex-basis: 200px;
-    flex-grow: 1;
 }
 
 #main-container {
@@ -106,4 +104,5 @@ body {
     width: 100%;
     height: calc(100% - 720px);
     background: whitesmoke;
+    padding: 10px;
 }
