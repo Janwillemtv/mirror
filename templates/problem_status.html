@@ -2,22 +2,51 @@
 
 <h3>Problem status</h3>
 <div id="problem-status-dashboard">
-    <table id="problem-status-table">
-        {% set keys = ['Type', 'Hardware version', 'Software version', 'Manufacturer', 'Company', 'Location'] %}
-        {% for key in keys %}
+    <table id="problem-status-table" data-selected-line="1">
+        {% set labels = {1:'Overheating', 2:'Wear&Tear', 3:'Oil level', 4:'Electrical',
+                        5:'Panic button pressed', 6:'Resource Supply', 7:'Blockage', 8:'Human Error',
+                        9:'Rust', 10:'Software Error', 11:'Sensor Error', 12:'Misalignment'} %}
+
+        <tr>
+            <th></th>
+            {% for machine in machinepassports %}
+                <th data-line="{{ machine["Type"] }}">{{ machine["ID"] }}</th>
+            {% endfor %}
+        </tr>
+        {% for num, label  in labels.items() %}
             <tr>
-                <td> {{ key }}</td>
+                <td>{{ label }}</td>
                 {% for machine in machinepassports %}
                     <td>
-                        <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"></div>
-                        {% if outliers[machine["ID"]] %}
-                            <script>
-                                $('#problem-{{ key }}{{ machine["ID"] }}').css('background-color', 'red');
-                            </script>
-                        {% endif %}
+                        <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
+                             data-line="{{ machine["Type"] }}"></div>
                     </td>
                 {% endfor %}
             </tr>
         {% endfor %}
+
+        {#        {% for key in keys %}#}
+        {#            <tr>#}
+        {#                <td> {{ key }}</td>#}
+        {#                {% for machine in machinepassports %}#}
+        {#                    <td>#}
+        {#                        <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"></div>#}
+        {#                        {% if outliers[machine["ID"]] %}#}
+        {#                            <script>#}
+        {#                                $('#problem-{{ key }}{{ machine["ID"] }}').css('background-color', 'red');#}
+        {#                            </script>#}
+        {#                        {% endif %}#}
+        {#                    </td>#}
+        {#                {% endfor %}#}
+        {#            </tr>#}
+        {#        {% endfor %}#}
     </table>
 </div>
+
+<script>
+    var selected_line = $('#problem-status-table').data('selected-line')
+    console.log("Selected line: " + selected_line)
+    var selected_line_type ='ABCDEFGHIJKLM'.charAt(selected_line)
+    console.log("Selected line: " + selected_line_type)
+    $('[data-line="1"]').show();
+</script>

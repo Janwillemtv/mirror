@@ -5,14 +5,16 @@
 <div id="machine-status-dashboard">
 
     {% for n in range(1,10) %}
-        <div class="machinelijn" id="lijn-{{ n }}">
+        <div class="machinelijn" id="lijn-{{ n }}" data-line="{{ n }}">
 
             <h3>{{ toLetter[n] }}</h3>
             {% for machine in machinepassports %}
-                {% let machinetimstamps = timestamps[machine["ID"]] %}
+                {#                {% let machinetimestamps = timestamps[machine["ID"]] %}#}
                 {% if machine["Type"] == toLetter[n] %}
                     <div class="status-indicator" id="indicator-{{ machine["ID"] }}"
-                         data-passport='{{ machine | tojson }}' data-timestamps='{{ machinetimestamps | tojson }}'>
+                         data-passport='{{ machine | tojson }}'>
+
+                        {#                         data-passport='{{ machine | tojson }}' data-timestamps='{{ machinetimestamps | tojson }}'>#}
                         {% if outliers[machine["ID"]] %}
                             <script>
                                 $('#indicator-{{ machine["ID"] }}').css('background-color', 'red');
@@ -30,7 +32,7 @@
 <script>
     $(".status-indicator").on('click', function () {
         var passport_json = $(this).data('passport');
-        var timestamps_json = $(this).data('timestamps');
+        {#        var timestamps_json = $(this).data('timestamps');#}
 
         $("#passport-view").html(
             "ID: " + passport_json["ID"] + '<br>' +
@@ -45,20 +47,22 @@
         );
         $("#passport-view").data('current-id', passport_json["ID"]);
 
-        $(".StepProgress").html("");
-
-        for (timestamp in timestamps_json) {
-            $(".StepProgress").append("                    <li class=\"StepProgress-item is-done\">\n" +
-                "                        <div class=\"bold time\"> " + timestamp[0] + " </div>\n" +
-                "                        <div class=\"bold\">" + timestamp[1] + "</div>\n" +
-                "                    </li>\n"
-            );
-        }
+        {#        $(".StepProgress").html("");#}
+        {##}
+        {#        for (timestamp in timestamps_json) {#}
+        {#            $(".StepProgress").append("                    <li class=\"StepProgress-item is-done\">\n" +#}
+        {#                "                        <div class=\"bold time\"> " + timestamp[0] + " </div>\n" +#}
+        {#                "                        <div class=\"bold\">" + timestamp[1] + "</div>\n" +#}
+        {#                "                    </li>\n"#}
+        {#            );#}
+        {#        }#}
     });
 
     $(".machinelijn").on('click', function () {
         $(".clicked").removeClass('clicked');
         $(this).addClass('clicked');
+        $("#problem-status-table").data('selected-line', $(this).data('line'))
     });
+
 
 </script>

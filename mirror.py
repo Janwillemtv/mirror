@@ -17,14 +17,15 @@ def hello_world():
 
     outliers = outlierDetector.detect_outliers()
 
-    with app.open_resource('static/timestamps.json') as f:
-        timestamps = json.load(f)
+    print("Loading timestamps")
+    # with app.open_resource('static/timestamps.json') as f:
+    #     timestamps = json.load(f)
 
     # An machine type is a letter, but sometimes indicated by a number...
     toLetter = {1: 'A', 2: 'B', 3: 'C', 4: 'D', 5: 'E', 6: 'F', 7: 'G', 8: 'H', 9: 'I'}
 
     return render_template('index.html', machinepassports=machinepassports,
-                            outliers=outliers, toLetter=toLetter, timestamps=timestamps)
+                            outliers=outliers, toLetter=toLetter)
 
 
 if __name__ == '__main__':

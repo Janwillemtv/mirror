@@ -4,6 +4,7 @@
     display: flex; /* or inline-flex */
     flex-direction: column;
     flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 #problem-status-dashboard {
@@ -18,4 +19,9 @@
     border-radius: 4px;
     background: #000;
     margin: 1px;
+}
+
+th, td {
+    width: 25px;
+    display: none;
 }
