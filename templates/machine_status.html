@@ -45,10 +45,12 @@
         );
         $("#passport-view").data('current-id', passport_json["ID"]);
 
+        $(".StepProgress").html("");
+
         for (timestamp in timestamps_json) {
             $(".StepProgress").append("                    <li class=\"StepProgress-item is-done\">\n" +
-                "                        <div class=\"bold time\">timestamp</div>\n" +
-                "                        <div class=\"bold\">Step 1</div>\n" +
+                "                        <div class=\"bold time\"> " + timestamp[0] + " </div>\n" +
+                "                        <div class=\"bold\">" + timestamp[1] + "</div>\n" +
                 "                    </li>\n"
             );
         }
