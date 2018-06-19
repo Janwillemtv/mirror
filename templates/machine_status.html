@@ -9,9 +9,10 @@
 
             <h3>{{ toLetter[n] }}</h3>
             {% for machine in machinepassports %}
+                {% let machinetimstamps = timestamps[machine["ID"]] %}
                 {% if machine["Type"] == toLetter[n] %}
                     <div class="status-indicator" id="indicator-{{ machine["ID"] }}"
-                         data-passport='{{ machine | tojson }}'>
+                         data-passport='{{ machine | tojson }}' data-timestamps='{{ machinetimestamps | tojson }}'>
                         {% if outliers[machine["ID"]] %}
                             <script>
                                 $('#indicator-{{ machine["ID"] }}').css('background-color', 'red');
@@ -28,20 +29,29 @@
 
 <script>
     $(".status-indicator").on('click', function () {
-        var json = $(this).data('passport');
-        console.log(json)
+        var passport_json = $(this).data('passport');
+        var timestamps_json = $(this).data('timestamps');
+
         $("#passport-view").html(
-            "ID: " + json["ID"] + '<br>' +
-            "Type: " + json["Type"] + '<br>' +
-            "Hardware version: " + json["Hardware version"] + '<br>' +
-            "Software version: " + json["Software version"] + '<br>' +
-            "Manufacturer: " + json["Manufacturer"] + '<br>' +
-            "Company: " + json["Company"] + '<br>' +
-            "Location: " + json["Location"] + '<br>' +
-            "date manufactured: " + json["date manufactured"] + '<br>' +
-            "date bought: " + json["date bought"] + '<br>'
+            "ID: " + passport_json["ID"] + '<br>' +
+            "Type: " + passport_json["Type"] + '<br>' +
+            "Hardware version: " + passport_json["Hardware version"] + '<br>' +
+            "Software version: " + passport_json["Software version"] + '<br>' +
+            "Manufacturer: " + passport_json["Manufacturer"] + '<br>' +
+            "Company: " + passport_json["Company"] + '<br>' +
+            "Location: " + passport_json["Location"] + '<br>' +
+            "date manufactured: " + passport_json["date manufactured"] + '<br>' +
+            "date bought: " + passport_json["date bought"] + '<br>'
         );
-        $("#passport-view").data('current-id', json["ID"]);
+        $("#passport-view").data('current-id', passport_json["ID"]);
+
+        for (timestamp in timestamps_json) {
+            $(".StepProgress").append("                    <li class=\"StepProgress-item is-done\">\n" +
+                "                        <div class=\"bold time\">timestamp</div>\n" +
+                "                        <div class=\"bold\">Step 1</div>\n" +
+                "                    </li>\n"
+            );
+        }
     });
 
     $(".machinelijn").on('click', function () {
