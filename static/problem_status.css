@@ -11,6 +11,8 @@
     height: auto;
     overflow: scroll;
     padding: 10px;
+    overflow-x: scroll;
+
 }
 
 .problem-indictor {
@@ -22,6 +24,5 @@
 }
 
 th, td {
-    width: 25px;
-    display: none;
+    width: 50px;
 }

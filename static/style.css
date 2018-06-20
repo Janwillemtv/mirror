@@ -92,6 +92,7 @@ body {
     flex-grow: 2;
     display: flex; /* or inline-flex */
     flex-direction: column;
+    width: 30%;
 }
 
 #right-column {
@@ -99,6 +100,10 @@ body {
     flex-grow: 2;
 }
 
+
+#passport {
+    margin-top: 40px;
+}
 #footer {
     overflow: hidden;
     width: 100%;

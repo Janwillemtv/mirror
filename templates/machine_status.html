@@ -4,19 +4,21 @@
 </div>
 <div id="machine-status-dashboard">
 
-    {% for n in range(1,10) %}
+    {% for n in range(1,11) %}
         <div class="machinelijn" id="lijn-{{ n }}" data-line="{{ n }}">
 
             <h3>{{ toLetter[n] }}</h3>
             {% for machine in machinepassports %}
                 {#                {% let machinetimestamps = timestamps[machine["ID"]] %}#}
                 {% if machine["Type"] == toLetter[n] %}
-                    <div class="status-indicator" id="indicator-{{ machine["ID"] }}"
-                         data-passport='{{ machine | tojson }}'>
+                    <div class="status-indicator" id="indicator-{{ machine["ID"] }}" data-id="{{ machine["ID"] }}"
+                         data-passport='{{ machine | tojson }}'
+                         data-timestamps='{{ timestamps[machine["ID"]] | tojson }}'>
 
                         {#                         data-passport='{{ machine | tojson }}' data-timestamps='{{ machinetimestamps | tojson }}'>#}
                         {% if outliers[machine["ID"]] %}
                             <script>
+                                $('#indicator-{{ machine["ID"] }}').addClass('outlier');
                                 $('#indicator-{{ machine["ID"] }}').css('background-color', 'red');
                             </script>
                         {% endif %}
@@ -31,6 +33,9 @@
 
 <script>
     $(".status-indicator").on('click', function () {
+
+        // Add passport.................
+
         var passport_json = $(this).data('passport');
         {#        var timestamps_json = $(this).data('timestamps');#}
 
@@ -47,21 +52,42 @@
         );
         $("#passport-view").data('current-id', passport_json["ID"]);
 
-        {#        $(".StepProgress").html("");#}
-        {##}
-        {#        for (timestamp in timestamps_json) {#}
-        {#            $(".StepProgress").append("                    <li class=\"StepProgress-item is-done\">\n" +#}
-        {#                "                        <div class=\"bold time\"> " + timestamp[0] + " </div>\n" +#}
-        {#                "                        <div class=\"bold\">" + timestamp[1] + "</div>\n" +#}
-        {#                "                    </li>\n"#}
-        {#            );#}
-        {#        }#}
+        // Add timeline................
+
+        $(".StepProgress").html("");
+
+        var timestamps_json = $(this).data('timestamps');
+
+        var messages = ['Problem X has been solved', 'A risk X has been detected', 'Machine suffers from problem X']
+
+        for (var i = 0; i < timestamps_json.length; i++) {
+            $(".StepProgress").append("                    <li class=\"StepProgress-item urgency-" + timestamps_json[i][1] + " \">\n" +
+                "                        <div class=\"bold time\"> " + timestamps_json[i][0] + " </div>\n" +
+                "                        <div class=\"bold\">" + messages[timestamps_json[i][1]] + "</div>\n" +
+                "                    </li>\n"
+            );
+        }
+
+        $('.StepProgress').scrollTop($('.StepProgress')[0].scrollHeight);
+
+        // Add notifications...............
+        if ($(this).hasClass('outlier')) {
+            $('#notifications').html("     <div class=\"alert-box error\"><span>Problem detected: </span> This machine likely has the following problems:" +
+                "        <b> Software error, Overheating </b></div>\n ")
+        } else {
+            $('#notifications').html("    <div class=\"alert-box warning\"><span>Warning: </span>This machine is more likely to have the following problems:"  +
+                "        <b> Electrical, Oil level </b></div>\n ")
+        }
+
     });
 
     $(".machinelijn").on('click', function () {
         $(".clicked").removeClass('clicked');
         $(this).addClass('clicked');
-        $("#problem-status-table").data('selected-line', $(this).data('line'))
+        var line = $(this).data('line')
+        $("#problem-status-table").data('selected-line', line)
+        ids = {{ ids_per_cluster }}
+            console.log(ids[line][0])
     });
 
 

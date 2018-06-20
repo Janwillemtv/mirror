@@ -8,10 +8,11 @@
                         9:'Rust', 10:'Software Error', 11:'Sensor Error', 12:'Misalignment'} %}
 
         <tr>
-            <th></th>
-            {% for machine in machinepassports %}
-                <th data-line="{{ machine["Type"] }}">{{ machine["ID"] }}</th>
-            {% endfor %}
+            <th>
+                {% for machine in machinepassports %}
+                    <th data-line="{{ machine["Type"] }}">{{ machine["ID"] }}</th>
+                {% endfor %}
+            </th>
         </tr>
         {% for num, label  in labels.items() %}
             <tr>
@@ -19,34 +20,30 @@
                 {% for machine in machinepassports %}
                     <td>
                         <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
-                             data-line="{{ machine["Type"] }}"></div>
+                             data-line="{{ machine["Type"] }}" data-label="{{ num }}"
+                             data-machineid="{{ machine["ID"] }}"></div>
                     </td>
                 {% endfor %}
             </tr>
         {% endfor %}
 
-        {#        {% for key in keys %}#}
-        {#            <tr>#}
-        {#                <td> {{ key }}</td>#}
-        {#                {% for machine in machinepassports %}#}
-        {#                    <td>#}
-        {#                        <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"></div>#}
-        {#                        {% if outliers[machine["ID"]] %}#}
-        {#                            <script>#}
-        {#                                $('#problem-{{ key }}{{ machine["ID"] }}').css('background-color', 'red');#}
-        {#                            </script>#}
-        {#                        {% endif %}#}
-        {#                    </td>#}
-        {#                {% endfor %}#}
-        {#            </tr>#}
-        {#        {% endfor %}#}
     </table>
 </div>
 
 <script>
     var selected_line = $('#problem-status-table').data('selected-line')
     console.log("Selected line: " + selected_line)
-    var selected_line_type ='ABCDEFGHIJKLM'.charAt(selected_line)
+    var selected_line_type = 'ABCDEFGHIJKLM'.charAt(selected_line)
     console.log("Selected line: " + selected_line_type)
-    $('[data-line="1"]').show();
+    console.log({{ ids_per_cluster }})
+
+    var colors = ['green', 'green', 'green','green','green','orange', 'orangered', 'red'];
+    $('.problem-indictor').each(function(index, value){
+        random_color = colors[Math.floor(Math.random() * colors.length)];
+        console.log(random_color)
+        $(this).css('background-color', random_color)
+    })
+
+
+
 </script>

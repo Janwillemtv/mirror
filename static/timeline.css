@@ -4,7 +4,7 @@
 
 .time {
     position: absolute;
-    left: -110px;
+    left: -160px;
 }
 
 #timeline {
@@ -12,7 +12,7 @@
 }
 
 .timeline-wrapper {
-    padding-left: 80px;
+    padding-left: 120px;
     min-width: 400px;
     font-family: 'Helvetica';
     font-size: 14px;
@@ -82,11 +82,11 @@
     background-color: darkblue;
 }
 
-.StepProgress-item.new::before {
+.StepProgress-item.urgency-0::before {
     border-left: 2px solid #008b00;
 }
 
-.StepProgress-item.new::after {
+.StepProgress-item.urgency-0::after {
     /*content: "+";*/
     font-size: 10px;
     color: #FFF;
@@ -94,13 +94,38 @@
     border: 2px solid #008b00;
 }
 
-.StepProgress-item.new {
-    /*content: "+";*/
-    background: #d3d3d3;
-    width: auto;
-    display: inline-block;
-    padding: 5px;
+.StepProgress-item.urgency-1::before {
+    border-left: 2px solid orange;
 }
+
+.StepProgress-item.urgency-1::after {
+    /*content: "+";*/
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border: 2px solid orange;
+}
+
+.StepProgress-item.urgency-2::before {
+    border-left: 2px solid red;
+}
+
+.StepProgress-item.urgency-2::after {
+    /*content: "+";*/
+    font-size: 10px;
+    color: #FFF;
+    text-align: center;
+    border: 2px solid red;
+}
+
+
+/*.StepProgress-item.urgency-0 {*/
+    /*!*content: "+";*!*/
+    /*background: #d3d3d3;*/
+    /*width: auto;*/
+    /*display: inline-block;*/
+    /*padding: 5px;*/
+/*}*/
 
 /*.StepProgress-item.current::before {
 border-left: 2px solid green;
