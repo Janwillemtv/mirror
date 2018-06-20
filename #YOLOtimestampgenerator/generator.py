@@ -26,10 +26,10 @@ def random_date(start,l,offset):
 
       if state ==1:
          delta = datetime.timedelta(minutes=randrange(0,offset))
-         current = current + delta
+         current = current - delta
       else:
          delta = datetime.timedelta(minutes=randrange(0, 120)) ##make offset shorter on orange maybe error thingy becaues fixed
-         current = current + delta
+         current = current - delta
 
       l-=1
       result.append([current.strftime("%d/%m/%y %H:%M"),state])
@@ -40,7 +40,7 @@ def random_date(start,l,offset):
 
 
 
-startDate = datetime.datetime(2018, 3, 1,00,00)
+startDate = datetime.datetime(2018, 6, 20,12,00)
 
 output = []
 for m in range(0,51):
