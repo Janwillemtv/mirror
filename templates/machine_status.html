@@ -70,13 +70,24 @@
 
         $('.StepProgress').scrollTop($('.StepProgress')[0].scrollHeight);
 
-        // Add notifications...............
-        if ($(this).hasClass('outlier')) {
-            $('#notifications').html("     <div class=\"alert-box error\"><span>Problem detected: </span> This machine likely has the following problems:" +
-                "        <b> Software error, Overheating </b></div>\n ")
-        } else {
-            $('#notifications').html("    <div class=\"alert-box warning\"><span>Warning: </span>This machine is more likely to have the following problems:"  +
-                "        <b> Electrical, Oil level </b></div>\n ")
+        $('#notifications').html("");
+
+        problems = passport_json["Problem"]
+        warnings = passport_json["Warning"]
+
+        console.log("Problems: ")
+        console.log(problems)
+        console.log("Warnings:")
+        console.log(warnings)
+
+        for (problem in problems) {
+            $('#notifications').append("     <div class=\"alert-box error\"><span>Problem detected: </span> This machine likely has the following problems:" +
+                problem + "</div>\n ")
+        }
+
+        for (warning in warnings) {
+            $('#notifications').append("     <div class=\"alert-box warning\"><span>Problem detected: </span> This machine likely has the following problems:" +
+                warning + "</div>\n ")
         }
 
     });

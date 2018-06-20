@@ -7,10 +7,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "2012-02-04T23:00:00.000Z",
-    "Date bought": "2017-07-07T22:00:00.000Z",
-    "Problem": "",
-    "Warning": "1,2"
+    "date manufactured": "2/5/2012",
+    "date bought": "7/8/2017"
   },
   {
     "ID": 2,
@@ -20,10 +18,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "2012-02-04T23:00:00.000Z",
-    "Date bought": "16/05/2013",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "2/5/2012",
+    "date bought": "16/05/2013"
   },
   {
     "ID": 3,
@@ -33,10 +29,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "2012-02-04T23:00:00.000Z",
-    "Date bought": "24/07/2012",
-    "Problem": "",
-    "Warning": "1,12"
+    "date manufactured": "2/5/2012",
+    "date bought": "24/07/2012"
   },
   {
     "ID": 4,
@@ -46,10 +40,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "2012-02-04T23:00:00.000Z",
-    "Date bought": "2015-07-07T22:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "2/5/2012",
+    "date bought": "7/8/2015"
   },
   {
     "ID": 5,
@@ -59,10 +51,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "2012-02-04T23:00:00.000Z",
-    "Date bought": "2016-10-11T22:00:00.000Z",
-    "Problem": "1,12",
-    "Warning": ""
+    "date manufactured": "2/5/2012",
+    "date bought": "10/12/2016"
   },
   {
     "ID": 6,
@@ -72,10 +62,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "13/06/2014",
-    "Date bought": "22/10/2015",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "13/06/2014",
+    "date bought": "22/10/2015"
   },
   {
     "ID": 7,
@@ -85,10 +73,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "13/06/2014",
-    "Date bought": "13/05/2016",
-    "Problem": "",
-    "Warning": 11
+    "date manufactured": "13/06/2014",
+    "date bought": "13/05/2016"
   },
   {
     "ID": 8,
@@ -98,10 +84,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "13/06/2014",
-    "Date bought": "30/06/2015",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "13/06/2014",
+    "date bought": "30/06/2015"
   },
   {
     "ID": 9,
@@ -111,10 +95,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "13/06/2014",
-    "Date bought": "28/07/2016",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "13/06/2014",
+    "date bought": "28/07/2016"
   },
   {
     "ID": 10,
@@ -124,10 +106,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "13/06/2014",
-    "Date bought": "22/10/2014",
-    "Problem": 4,
-    "Warning": ""
+    "date manufactured": "13/06/2014",
+    "date bought": "22/10/2014"
   },
   {
     "ID": 11,
@@ -137,10 +117,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "2014-06-09T22:00:00.000Z",
-    "Date bought": "24/02/2018",
-    "Problem": "",
-    "Warning": "5,8"
+    "date manufactured": "6/10/2014",
+    "date bought": "24/02/2018"
   },
   {
     "ID": 12,
@@ -150,10 +128,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "2014-06-09T22:00:00.000Z",
-    "Date bought": "14/11/2014",
-    "Problem": "",
-    "Warning": 5
+    "date manufactured": "6/10/2014",
+    "date bought": "14/11/2014"
   },
   {
     "ID": 13,
@@ -163,10 +139,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "2014-06-09T22:00:00.000Z",
-    "Date bought": "2015-06-08T22:00:00.000Z",
-    "Problem": "4,7",
-    "Warning": ""
+    "date manufactured": "6/10/2014",
+    "date bought": "6/9/2015"
   },
   {
     "ID": 14,
@@ -176,10 +150,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "2014-06-09T22:00:00.000Z",
-    "Date bought": "31/10/2016",
-    "Problem": 2,
-    "Warning": ""
+    "date manufactured": "6/10/2014",
+    "date bought": "31/10/2016"
   },
   {
     "ID": 15,
@@ -189,10 +161,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "2014-06-09T22:00:00.000Z",
-    "Date bought": "31/01/2017",
-    "Problem": 9,
-    "Warning": ""
+    "date manufactured": "6/10/2014",
+    "date bought": "31/01/2017"
   },
   {
     "ID": 16,
@@ -202,10 +172,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "2014-01-01T23:00:00.000Z",
-    "Date bought": "2018-05-02T22:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "1/2/2014",
+    "date bought": "5/3/2018"
   },
   {
     "ID": 17,
@@ -215,10 +183,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "2014-01-01T23:00:00.000Z",
-    "Date bought": "2016-12-07T23:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "1/2/2014",
+    "date bought": "12/8/2016"
   },
   {
     "ID": 18,
@@ -228,10 +194,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "2014-01-01T23:00:00.000Z",
-    "Date bought": "2017-09-07T22:00:00.000Z",
-    "Problem": "",
-    "Warning": 12
+    "date manufactured": "1/2/2014",
+    "date bought": "9/8/2017"
   },
   {
     "ID": 19,
@@ -241,10 +205,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "2014-01-01T23:00:00.000Z",
-    "Date bought": "29/05/2016",
-    "Problem": 6,
-    "Warning": ""
+    "date manufactured": "1/2/2014",
+    "date bought": "29/05/2016"
   },
   {
     "ID": 20,
@@ -254,10 +216,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "2014-01-01T23:00:00.000Z",
-    "Date bought": "2014-12-05T23:00:00.000Z",
-    "Problem": 5,
-    "Warning": ""
+    "date manufactured": "1/2/2014",
+    "date bought": "12/6/2014"
   },
   {
     "ID": 21,
@@ -267,10 +227,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "26/07/2013",
-    "Date bought": "15/02/2016",
-    "Problem": 10,
-    "Warning": ""
+    "date manufactured": "26/07/2013",
+    "date bought": "15/02/2016"
   },
   {
     "ID": 22,
@@ -280,10 +238,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "26/07/2013",
-    "Date bought": "13/10/2013",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "26/07/2013",
+    "date bought": "13/10/2013"
   },
   {
     "ID": 23,
@@ -293,10 +249,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "26/07/2013",
-    "Date bought": "16/03/2014",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "26/07/2013",
+    "date bought": "16/03/2014"
   },
   {
     "ID": 24,
@@ -306,10 +260,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "26/07/2013",
-    "Date bought": "2014-02-08T23:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "26/07/2013",
+    "date bought": "2/9/2014"
   },
   {
     "ID": 25,
@@ -319,10 +271,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "26/07/2013",
-    "Date bought": "15/09/2015",
-    "Problem": 3,
-    "Warning": ""
+    "date manufactured": "26/07/2013",
+    "date bought": "15/09/2015"
   },
   {
     "ID": 26,
@@ -332,10 +282,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "2013-03-05T23:00:00.000Z",
-    "Date bought": "2014-05-02T22:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "3/6/2013",
+    "date bought": "5/3/2014"
   },
   {
     "ID": 27,
@@ -345,10 +293,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "2013-03-05T23:00:00.000Z",
-    "Date bought": "28/10/2015",
-    "Problem": "",
-    "Warning": 10
+    "date manufactured": "3/6/2013",
+    "date bought": "28/10/2015"
   },
   {
     "ID": 28,
@@ -358,10 +304,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "2013-03-05T23:00:00.000Z",
-    "Date bought": "22/04/2012",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "3/6/2013",
+    "date bought": "22/04/2012"
   },
   {
     "ID": 29,
@@ -371,10 +315,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "2013-03-05T23:00:00.000Z",
-    "Date bought": "25/09/2017",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "3/6/2013",
+    "date bought": "25/09/2017"
   },
   {
     "ID": 30,
@@ -384,10 +326,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "2013-03-05T23:00:00.000Z",
-    "Date bought": "2013-03-10T23:00:00.000Z",
-    "Problem": 11,
-    "Warning": ""
+    "date manufactured": "3/6/2013",
+    "date bought": "3/11/2013"
   },
   {
     "ID": 31,
@@ -397,10 +337,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "25/04/2012",
-    "Date bought": "2017-01-04T23:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "25/04/2012",
+    "date bought": "1/5/2017"
   },
   {
     "ID": 32,
@@ -410,10 +348,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "25/04/2012",
-    "Date bought": "25/01/2016",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "25/04/2012",
+    "date bought": "25/01/2016"
   },
   {
     "ID": 33,
@@ -423,10 +359,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "25/04/2012",
-    "Date bought": "15/08/2012",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "25/04/2012",
+    "date bought": "15/08/2012"
   },
   {
     "ID": 34,
@@ -436,10 +370,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "25/04/2012",
-    "Date bought": "2016-12-08T23:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "25/04/2012",
+    "date bought": "12/9/2016"
   },
   {
     "ID": 35,
@@ -449,10 +381,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "25/04/2012",
-    "Date bought": "13/04/2015",
-    "Problem": 4,
-    "Warning": ""
+    "date manufactured": "25/04/2012",
+    "date bought": "13/04/2015"
   },
   {
     "ID": 36,
@@ -462,10 +392,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "30/07/2012",
-    "Date bought": "2012-11-07T23:00:00.000Z",
-    "Problem": "",
-    "Warning": "1,7"
+    "date manufactured": "30/07/2012",
+    "date bought": "11/8/2012"
   },
   {
     "ID": 37,
@@ -475,10 +403,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "30/07/2012",
-    "Date bought": "2014-08-06T22:00:00.000Z",
-    "Problem": "",
-    "Warning": 2
+    "date manufactured": "30/07/2012",
+    "date bought": "8/7/2014"
   },
   {
     "ID": 38,
@@ -488,10 +414,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "30/07/2012",
-    "Date bought": "2017-09-10T22:00:00.000Z",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "30/07/2012",
+    "date bought": "9/11/2017"
   },
   {
     "ID": 39,
@@ -501,10 +425,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "30/07/2012",
-    "Date bought": "19/01/2013",
-    "Problem": "",
-    "Warning": 8
+    "date manufactured": "30/07/2012",
+    "date bought": "19/01/2013"
   },
   {
     "ID": 40,
@@ -514,10 +436,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "30/07/2012",
-    "Date bought": "22/12/2013",
-    "Problem": 1,
-    "Warning": ""
+    "date manufactured": "30/07/2012",
+    "date bought": "22/12/2013"
   },
   {
     "ID": 41,
@@ -527,10 +447,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "2013-11-06T23:00:00.000Z",
-    "Date bought": "17/11/2014",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "11/7/2013",
+    "date bought": "17/11/2014"
   },
   {
     "ID": 42,
@@ -540,10 +458,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "2013-11-06T23:00:00.000Z",
-    "Date bought": "18/05/2016",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "11/7/2013",
+    "date bought": "18/05/2016"
   },
   {
     "ID": 43,
@@ -553,10 +469,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "2013-11-06T23:00:00.000Z",
-    "Date bought": "24/11/2013",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "11/7/2013",
+    "date bought": "24/11/2013"
   },
   {
     "ID": 44,
@@ -566,10 +480,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "2013-11-06T23:00:00.000Z",
-    "Date bought": "15/03/2018",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "11/7/2013",
+    "date bought": "15/03/2018"
   },
   {
     "ID": 45,
@@ -579,10 +491,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "2013-11-06T23:00:00.000Z",
-    "Date bought": "25/01/2015",
-    "Problem": 9,
-    "Warning": ""
+    "date manufactured": "11/7/2013",
+    "date bought": "25/01/2015"
   },
   {
     "ID": 46,
@@ -592,10 +502,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Rolls Joyce",
     "Location": "Apeldoorn",
-    "Date manufactured": "2012-06-05T22:00:00.000Z",
-    "Date bought": "2018-12-04T23:00:00.000Z",
-    "Problem": "",
-    "Warning": 1
+    "date manufactured": "6/6/2012",
+    "date bought": "12/5/2018"
   },
   {
     "ID": 47,
@@ -605,10 +513,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "BJW",
     "Location": "Winterswijk",
-    "Date manufactured": "2012-06-06T22:00:00.000Z",
-    "Date bought": "27/06/2017",
-    "Problem": "",
-    "Warning": "1,4"
+    "date manufactured": "6/7/2012",
+    "date bought": "27/06/2017"
   },
   {
     "ID": 48,
@@ -618,10 +524,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Luxus",
     "Location": "Utrecht",
-    "Date manufactured": "2012-06-07T22:00:00.000Z",
-    "Date bought": "29/11/2012",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "6/8/2012",
+    "date bought": "29/11/2012"
   },
   {
     "ID": 49,
@@ -631,10 +535,8 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Margorati",
     "Location": "Zeist",
-    "Date manufactured": "2012-06-08T22:00:00.000Z",
-    "Date bought": "14/06/2015",
-    "Problem": "",
-    "Warning": ""
+    "date manufactured": "6/9/2012",
+    "date bought": "14/06/2015"
   },
   {
     "ID": 50,
@@ -644,9 +546,7 @@
     "Manufacturer": "Lammers Machines",
     "Company": "Ranoult",
     "Location": "Leiden",
-    "Date manufactured": "2012-06-09T22:00:00.000Z",
-    "Date bought": "2014-09-11T22:00:00.000Z",
-    "Problem": "1,9",
-    "Warning": ""
+    "date manufactured": "6/10/2012",
+    "date bought": "9/12/2014"
   }
 ]

@@ -19,9 +19,28 @@
                 <td>{{ label }}</td>
                 {% for machine in machinepassports %}
                     <td>
-                        <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
-                             data-line="{{ machine["Type"] }}" data-label="{{ num }}"
-                             data-machineid="{{ machine["ID"] }}"></div>
+
+                        {% if num|string in machine['Warning']|string %}
+
+                            <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
+                                 data-line="{{ machine["Type"] }}" data-label="{{ num }}"
+                                 data-machineid="{{ machine["ID"] }}" data-color="orange"></div>
+
+
+                        {% elif num|string in machine['Problem']|string %}
+
+                            <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
+                                 data-line="{{ machine["Type"] }}" data-label="{{ num }}"
+                                 data-machineid="{{ machine["ID"] }}" data-color="red"></div>
+
+                        {% else %}
+
+                            <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
+                                 data-line="{{ machine["Type"] }}" data-label="{{ num }}"
+                                 data-machineid="{{ machine["ID"] }}" data-color="green"></div>
+
+                        {% endif %}
+
                     </td>
                 {% endfor %}
             </tr>
@@ -37,13 +56,11 @@
     console.log("Selected line: " + selected_line_type)
     console.log({{ ids_per_cluster }})
 
-    var colors = ['green', 'green', 'green','green','green','orange', 'orangered', 'red'];
-    $('.problem-indictor').each(function(index, value){
-        random_color = colors[Math.floor(Math.random() * colors.length)];
-        console.log(random_color)
-        $(this).css('background-color', random_color)
+    var colors = ['green', 'green', 'green', 'green', 'green', 'orange', 'orangered', 'red'];
+    $('.problem-indictor').each(function (index, value) {
+        acolor = $(this).data('color')
+        $(this).css('background-color', acolor)
     })
-
 
 
 </script>

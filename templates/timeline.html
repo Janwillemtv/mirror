@@ -6,7 +6,6 @@
     <ul class="StepProgress">
 {#        Deze wordt ingevuld met jQuery vanuit machine_status.html#}
     </ul>
-
 </div>
 
 <script>
@@ -16,5 +15,11 @@
             ' </div>\n' +
             '            <div class="bold">New item</div>\n' +
             '        </li>').insertBefore(this);
+    });
+
+
+    $('.StepProgress-item').on('click', function() {
+        alert('hi')
+        $('.StepProgress').after('Hello');
     });
 </script>

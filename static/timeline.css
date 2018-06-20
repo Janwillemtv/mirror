@@ -118,13 +118,12 @@
     border: 2px solid red;
 }
 
-
 /*.StepProgress-item.urgency-0 {*/
-    /*!*content: "+";*!*/
-    /*background: #d3d3d3;*/
-    /*width: auto;*/
-    /*display: inline-block;*/
-    /*padding: 5px;*/
+/*!*content: "+";*!*/
+/*background: #d3d3d3;*/
+/*width: auto;*/
+/*display: inline-block;*/
+/*padding: 5px;*/
 /*}*/
 
 /*.StepProgress-item.current::before {
@@ -145,4 +144,8 @@ background-color: white;
 }*/
 .StepProgress strong {
     display: block;
+}
+
+#rapport {
+    background: blue;
 }
