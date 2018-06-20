@@ -18,35 +18,20 @@
             <tr>
                 <td>{{ label }}</td>
                 {% for machine in machinepassports %}
-
-{#                    <script>#}
-{#                        passport_json = {{ machine }}#}
-{#                        problems = passport_json["Problem"].split(",")#}
-{#                        warnings = passport_json["Warning"].split(",")#}
-{#                    </script>#}
-
                     <td>
-
-                        {% if num|string in machine['Warning'] %}
-
+                        {% if num|string in machine['Warning'].split(',') %}
                             <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
                                  data-line="{{ machine["Type"] }}" data-label="{{ num }}"
                                  data-machineid="{{ machine["ID"] }}" data-color="orange"></div>
-
-                        {% elif num|string in machine['Problem'] %}
-
+                        {% elif num|string in machine['Problem'].split(',') %}
                             <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
                                  data-line="{{ machine["Type"] }}" data-label="{{ num }}"
                                  data-machineid="{{ machine["ID"] }}" data-color="red"></div>
-
                         {% else %}
-
                             <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
                                  data-line="{{ machine["Type"] }}" data-label="{{ num }}"
                                  data-machineid="{{ machine["ID"] }}" data-color="green"></div>
-
                         {% endif %}
-
                     </td>
                 {% endfor %}
             </tr>
