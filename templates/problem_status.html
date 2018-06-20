@@ -18,16 +18,22 @@
             <tr>
                 <td>{{ label }}</td>
                 {% for machine in machinepassports %}
+
+{#                    <script>#}
+{#                        passport_json = {{ machine }}#}
+{#                        problems = passport_json["Problem"].split(",")#}
+{#                        warnings = passport_json["Warning"].split(",")#}
+{#                    </script>#}
+
                     <td>
 
-                        {% if num|string in machine['Warning']|string %}
+                        {% if num|string in machine['Warning'] %}
 
                             <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
                                  data-line="{{ machine["Type"] }}" data-label="{{ num }}"
                                  data-machineid="{{ machine["ID"] }}" data-color="orange"></div>
 
-
-                        {% elif num|string in machine['Problem']|string %}
+                        {% elif num|string in machine['Problem'] %}
 
                             <div class="problem-indictor" id="problem-{{ key }}{{ machine["ID"] }}"
                                  data-line="{{ machine["Type"] }}" data-label="{{ num }}"

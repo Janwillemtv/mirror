@@ -16,10 +16,15 @@
                          data-timestamps='{{ timestamps[machine["ID"]] | tojson }}'>
 
                         {#                         data-passport='{{ machine | tojson }}' data-timestamps='{{ machinetimestamps | tojson }}'>#}
-                        {% if outliers[machine["ID"]] %}
+                        {% if machine['Problem']!="" %}
                             <script>
                                 $('#indicator-{{ machine["ID"] }}').addClass('outlier');
                                 $('#indicator-{{ machine["ID"] }}').css('background-color', 'red');
+                            </script>
+                        {% elif machine['Warning']!="" %}
+                            <script>
+                                $('#indicator-{{ machine["ID"] }}').addClass('outlier');
+                                $('#indicator-{{ machine["ID"] }}').css('background-color', 'orange');
                             </script>
                         {% endif %}
                         {{ machine["ID"] }}
@@ -47,8 +52,8 @@
             "Manufacturer: " + passport_json["Manufacturer"] + '<br>' +
             "Company: " + passport_json["Company"] + '<br>' +
             "Location: " + passport_json["Location"] + '<br>' +
-            "date manufactured: " + passport_json["date manufactured"] + '<br>' +
-            "date bought: " + passport_json["date bought"] + '<br>'
+            "Date manufactured: " + passport_json["Date manufactured"] + '<br>' +
+            "Date bought: " + passport_json["Date bought"] + '<br>'
         );
         $("#passport-view").data('current-id', passport_json["ID"]);
 
@@ -72,23 +77,31 @@
 
         $('#notifications').html("");
 
-        problems = passport_json["Problem"]
-        warnings = passport_json["Warning"]
+        problems = passport_json["Problem"].split(",")
+        warnings = passport_json["Warning"].split(",")
 
+        ptype = ['Overheating', 'Wear&Tear', 'Oil level', 'Electrical', 'Panic Button Pressed', 'Resource Supply', 'Blockage', 'Human Error', 'Rust', 'Software Error',
+            'Sensor Error', 'Misalignment']
+
+        console.log("Machine " + passport_json["ID"])
         console.log("Problems: ")
         console.log(problems)
         console.log("Warnings:")
         console.log(warnings)
 
-        for (problem in problems) {
-            $('#notifications').append("     <div class=\"alert-box error\"><span>Problem detected: </span> This machine likely has the following problems:" +
-                problem + "</div>\n ")
-        }
+        problems.forEach(function (problem) {
+            if (problem != "") {
+                $('#notifications').append("     <div class=\"alert-box error\"><span>Problem detected: </span> This machine likely has the following problems:" +
+                    ptype[parseInt(problem) - 1] + "</div>\n ")
+            }
+        });
 
-        for (warning in warnings) {
-            $('#notifications').append("     <div class=\"alert-box warning\"><span>Problem detected: </span> This machine likely has the following problems:" +
-                warning + "</div>\n ")
-        }
+        warnings.forEach(function (warning) {
+            if (warning != "") {
+                $('#notifications').append("     <div class=\"alert-box warning\"><span>Problem detected: </span> This machine likely has the following problems:" +
+                    ptype[parseInt(warning) - 1] + "</div>\n ")
+            }
+        });
 
     });
 
